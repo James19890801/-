@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>冯周充 · 简历</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #2e3a42;
+    --ink-light: #3d4f5a;
+    --accent: #4a6274;
+    --accent-warm: #b8a070;
+    --accent-green: #5a8070;
+    --sidebar-bg: #4a6274;
+    --sidebar-text: #dce6ec;
+    --sidebar-dim: #a8bec9;
+    --metric-bg: #f0f4f2;
+    --metric-text: #3d6458;
+    --metric-border: #b0ccc4;
+    --award-bg: #faf6ee;
+    --award-border: #c8aa7a;
+    --rule: #dde6e2;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    background: #e8e4de;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 32px 16px;
+    color: var(--ink);
+  }
+  .resume {
+    display: flex;
+    flex-direction: row;
+    width: 880px;
+    background: #faf9f7;
+    border-radius: 6px;
+    box-shadow: 0 8px 48px rgba(60,70,65,0.14);
+    overflow: hidden;
+  }
+  .sidebar {
+    width: 248px;
+    flex-shrink: 0;
+    background: var(--sidebar-bg);
+    color: var(--sidebar-text);
+    padding: 32px 22px 32px 22px;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  .avatar {
+    display: block;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 14px;
+    border: 3px solid rgba(220,230,236,0.4);
+  }
+  .name-block { text-align: center; margin-bottom: 18px; }
+  .name-cn { font-size: 20px; font-weight: 700; color: #fff; letter-spacing: 2px; }
+  .name-intent { font-size: 11px; color: var(--sidebar-dim); margin-top: 4px; letter-spacing: 0.5px; }
+  .sb-section { margin-bottom: 18px; }
+  .sb-label {
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--accent-warm);
+    border-bottom: 1px solid rgba(184,160,112,0.35);
+    padding-bottom: 4px;
+    margin-bottom: 9px;
+  }
+  .contact-list { list-style: none; }
+  .contact-list li {
+    font-size: 11px;
+    color: var(--sidebar-dim);
+    padding: 3px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 7px;
+    line-height: 1.5;
+  }
+  .contact-list li span { color: var(--sidebar-text); }
+  .skill-tag {
+    display: inline-block;
+    background: rgba(220,230,236,0.13);
+    border: 1px solid rgba(220,230,236,0.25);
+    color: var(--sidebar-dim);
+    font-size: 10.5px;
+    padding: 3px 8px;
+    border-radius: 3px;
+    margin: 2px 2px 2px 0;
+    line-height: 1.5;
+  }
+  .edu-item { margin-bottom: 10px; }
+  .edu-school { font-size: 12px; font-weight: 600; color: var(--sidebar-text); }
+  .edu-tags { margin-top: 3px; }
+  .edu-tag {
+    display: inline-block;
+    font-size: 9.5px;
+    background: rgba(90,128,112,0.4);
+    color: #b8e0d0;
+    padding: 1px 6px;
+    border-radius: 2px;
+    margin-right: 3px;
+  }
+  .edu-major { font-size: 10.5px; color: var(--sidebar-dim); margin-top: 3px; }
+  .edu-date { font-size: 10px; color: rgba(168,190,201,0.7); margin-top: 1px; }
+  .cert-item {
+    font-size: 10.5px;
+    color: var(--sidebar-dim);
+    padding: 2px 0;
+    padding-left: 10px;
+    position: relative;
+    line-height: 1.5;
+  }
+  .cert-item::before { content: "·"; position: absolute; left: 0; color: var(--accent-warm); }
+  .lang-item { font-size: 10.5px; color: var(--sidebar-dim); padding: 2px 0; }
+  .main {
+    flex: 1;
+    padding: 32px 30px 40px 28px;
+    overflow: hidden;
+  }
+  .main-header { margin-bottom: 20px; border-bottom: 2px solid var(--rule); padding-bottom: 16px; }
+  .main-name { font-size: 24px; font-weight: 700; color: var(--ink); letter-spacing: 2px; }
+  .main-intent { font-size: 13px; color: var(--accent); font-weight: 500; margin-top: 4px; }
+  .section-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    border-left: 3px solid var(--accent-warm);
+    padding-left: 8px;
+    margin: 22px 0 12px;
+  }
+  .highlights { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 6px; }
+  .hl-card {
+    border-left: 3px solid var(--accent);
+    background: #f2f5f3;
+    padding: 9px 12px;
+    border-radius: 0 3px 3px 0;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  .hl-label { font-size: 9.5px; font-weight: 700; color: var(--accent-warm); letter-spacing: 0.8px; margin-bottom: 3px; text-transform: uppercase; }
+  .hl-card p { font-size: 11px; line-height: 1.6; color: var(--ink-light); }
+  .exp-block { margin-bottom: 14px; }
+  .exp-divider { border: none; border-top: 1px solid var(--rule); margin: 14px 0; }
+  .exp-header { display: flex; align-items: baseline; gap: 8px; margin-bottom: 4px; flex-wrap: wrap; }
+  .exp-company { font-size: 14px; font-weight: 700; color: var(--ink); }
+  .exp-location { font-size: 11px; color: #8a9ea8; }
+  .role-block { margin-bottom: 6px; }
+  .role-name { font-size: 12px; font-weight: 600; color: var(--ink-light); margin-bottom: 5px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .badge { font-size: 10px; font-weight: 400; background: var(--metric-bg); color: var(--accent); border-radius: 3px; padding: 1px 7px; border: 1px solid var(--metric-border); }
+  .bullet-list { list-style: none; padding-left: 0; }
+  .bullet-list li { font-size: 11.5px; line-height: 1.7; color: var(--ink-light); padding: 1.5px 0 1.5px 13px; position: relative; }
+  .bullet-list li::before { content: "–"; position: absolute; left: 0; color: var(--accent-warm); }
+  .metric { display: inline-flex; align-items: center; background: var(--metric-bg); border: 1px solid var(--metric-border); color: var(--metric-text); font-size: 10.5px; font-weight: 700; padding: 1px 7px; border-radius: 2px; margin-left: 4px; white-space: nowrap; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .metric.green { background: #eaf7f2; border-color: #9ecebb; color: #2e7060; }
+  .metric.gold { background: var(--award-bg); border-color: var(--award-border); color: #8a6030; }
+  .award-line { font-size: 10.5px; color: #8a7050; background: var(--award-bg); border-left: 3px solid var(--accent-warm); padding: 5px 10px; border-radius: 0 3px 3px 0; margin-top: 6px; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .proj-block { margin-bottom: 14px; }
+  .proj-header { display: flex; align-items: baseline; gap: 8px; margin-bottom: 4px; flex-wrap: wrap; }
+  .proj-name { font-size: 13px; font-weight: 700; color: var(--ink); }
+  .proj-role { font-size: 11px; color: var(--accent); font-weight: 600; }
+  .proj-date { font-size: 10.5px; color: #8a9ea8; margin-left: auto; }
+  .proj-desc { font-size: 11px; color: #8a9ea8; margin-bottom: 4px; line-height: 1.6; }
+  @media print {
+    body { background: none; padding: 0; }
+    .resume { box-shadow: none; width: 100%; }
+    .fab-wrap { display: none !important; }
+  }
+  .fab-wrap { position: fixed; top: 20px; right: 20px; z-index: 999; }
+  .fab-btn { background: #4a6274; color: #fff; border: none; border-radius: 8px; padding: 9px 16px; font-size: 13px; cursor: pointer; box-shadow: 0 4px 16px rgba(74,98,116,0.35); display: flex; align-items: center; gap: 7px; -webkit-appearance: none; appearance: none; }
+  .fab-btn:hover { background: #3a5264; }
+  @media (max-width: 600px) {
+    body { padding: 0; background: #faf9f7; align-items: stretch; }
+    .resume { flex-direction: column; width: 100%; border-radius: 0; box-shadow: none; }
+    .sidebar { width: 100%; padding: 24px 20px 20px; }
+    .highlights { grid-template-columns: 1fr; }
+    .main { padding: 20px 16px 32px; }
+    .fab-wrap { top: 12px; right: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="fab-wrap">
+  <button class="fab-btn" onclick="exportPDF()">
+    <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+    导出 PDF
+  </button>
+</div>
+
+<div class="resume">
+  <aside class="sidebar">
+    <div>
+      <div class="avatar-placeholder">冯</div>
+      <div class="name-block">
+        <div class="name-cn">冯周充</div>
+        <div class="name-intent">AI产品专家 · 流程管理</div>
+      </div>
+    </div>
+
+    <div class="sb-section">
+      <div class="sb-label">基本信息</div>
+      <ul class="contact-list">
+        <li>📍 <span>杭州</span></li>
+        <li>🎓 <span>西南大学 · 本科</span></li>
+        <li>💼 <span>10年+ 500强经验</span></li>
+      </ul>
+    </div>
+
+    <div class="sb-section">
+      <div class="sb-label">核心技能</div>
+      <span class="skill-tag">AI产品设计</span>
+      <span class="skill-tag">提示词工程</span>
+      <span class="skill-tag">Skills开发</span>
+      <span class="skill-tag">流程管理</span>
+      <span class="skill-tag">流程优化</span>
+      <span class="skill-tag">项目管理</span>
+      <span class="skill-tag">业务架构</span>
+      <span class="skill-tag">数字化转型</span>
+    </div>
+
+    <div class="sb-section">
+      <div class="sb-label">教育背景</div>
+      <div class="edu-item">
+        <div class="edu-school">西南大学</div>
+        <div class="edu-tags">
+          <span class="edu-tag">211</span>
+          <span class="edu-tag">双一流</span>
+        </div>
+        <div class="edu-major">植物保护 · 本科</div>
+        <div class="edu-date">2008.09 — 2012.07</div>
+      </div>
+    </div>
+
+    <div class="sb-section">
+      <div class="sb-label">语言能力</div>
+      <div class="lang-item">英语（商务洽谈）</div>
+      <div class="lang-item">普通话（母语/近母语）</div>
+      <div class="lang-item">粤语（母语/近母语）</div>
+    </div>
+
+    <div class="sb-section">
+      <div class="sb-label">认证资质</div>
+      <div class="cert-item">AIGC高级应用工程师（工信部）</div>
+      <div class="cert-item">阿里云大模型工程师</div>
+      <div class="cert-item">PMP项目管理证书（PMI）</div>
+      <div class="cert-item">流程管理技术高级（工信部）</div>
+      <div class="cert-item">TOGAF9 企业架构师认证</div>
+      <div class="cert-item">集成系统项目管理（工信部）</div>
+      <div class="cert-item">ITIL4 Foundation</div>
+      <div class="cert-item">六西格玛黑带培训证书</div>
+      <div class="cert-item">精益VSM价值流改善周</div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="main-header">
+      <div class="main-name">冯周充</div>
+      <div class="main-intent">AI产品专家 &nbsp;|&nbsp; 流程管理专家 &nbsp;|&nbsp; 数字化转型</div>
+    </div>
+
+    <div class="section-title">核心亮点</div>
+    <div class="highlights">
+      <div class="hl-card">
+        <div class="hl-label">资深经验</div>
+        <p>10年+ 世界500强企业流程与项目管理实战；近3年AI产品开发，亲手搭建超过20个应用，发布超过100个AI Coding项目</p>
+      </div>
+      <div class="hl-card">
+        <div class="hl-label">技术标杆</div>
+        <p>国内AI+数字化流程管理标杆专家，擅长提示词/Skills及上下文工程，主导产品获阿里集团AI比赛奖项</p>
+      </div>
+      <div class="hl-card">
+        <div class="hl-label">权威认证</div>
+        <p>持有PMP、AIGC高级工程师、流程管理专家、TOGAF9企业架构师等9项国内外专业认证</p>
+      </div>
+      <div class="hl-card">
+        <div class="hl-label">行业影响</div>
+        <p>中国流程管理最佳实践知识库主理人，与头部顾问深度合作，行业影响力突出</p>
+      </div>
+    </div>
+
+    <div class="section-title">工作经历</div>
+
+    <div class="exp-block">
+      <div class="exp-header">
+        <span class="exp-company">阿里巴巴集团（中国）有限公司</span>
+        <span class="exp-location">杭州 · 余杭区</span>
+        <span class="badge">2022.07 — 至今</span>
+      </div>
+      <div class="role-block">
+        <div class="role-name">AI产品专家</div>
+        <ul class="bullet-list">
+          <li>牵头打造通用办公AI一体化工作台，聚焦高效办公、会议协作、文档创作、数据分析核心场景，完成产品从0到1的设计与落地，公司覆盖率达 <span class="metric green">70%</span>，获阿里内部AI比赛奖项</li>
+          <li>主导研发企业级智能体平台（类企业版扣子），采用分层设计兼顾专业开发者与非专业用户，提供模型中心、提示词管理、智能体市场等完整能力体系</li>
+          <li>负责流程智能与OA智能审批产品，落地自动审批、智能审单功能，重点突破财务审核领域（合同、付款、凭证、账单），累计节约工时超 <span class="metric green">1万小时</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="exp-divider">
+
+    <div class="exp-block">
+      <div class="exp-header">
+        <span class="exp-company">杭州海康威视数字技术股份有限公司</span>
+        <span class="exp-location">杭州</span>
+        <span class="badge">2021.05 — 2022.07</span>
+      </div>
+      <div class="role-block">
+        <div class="role-name">流程IT经理</div>
+        <ul class="bullet-list">
+          <li>负责旗下三家战略子公司流程体系建设，实现流程管理从0到1的突破；收集需求、完成变革规划</li>
+          <li>负责总部及战略子公司业务架构刷新或新建，引导和推进公司各类项目立项和交付</li>
+          <li>协助业务流程owner完成流程设计优化，支撑流程绩效监控分析、改进及管理成熟度评估</li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="exp-divider">
+
+    <div class="exp-block">
+      <div class="exp-header">
+        <span class="exp-company">沃尔玛（中国）投资有限公司</span>
+        <span class="exp-location">深圳</span>
+        <span class="badge">2016.02 — 2020.07</span>
+      </div>
+      <div class="role-block">
+        <div class="role-name">流程优化项目经理</div>
+        <ul class="bullet-list">
+          <li>从顾客及一线员工视角出发，系统梳理门店流程，识别改进机会，推动流程优化与再造</li>
+          <li>主导电子价格标签项目：负责可行性分析及ROI测算，推进新店及改造店上线，年节省约 <span class="metric gold">50万元</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="exp-divider">
+
+    <div class="exp-block">
+      <div class="exp-header">
+        <span class="exp-company">海航航空集团</span>
+        <span class="exp-location">海口</span>
+        <span class="badge">2012.07 — 2016.02</span>
+      </div>
+      <div class="role-block">
+        <div class="role-name">机上零售运营经理</div>
+        <ul class="bullet-list">
+          <li>管理11个机上零售业务运营基地的日常业务，定期分析销售情况为管理层提供决策依据</li>
+          <li>主导供应链系统建设（用友NC），规范业务管理，避免损耗年约 <span class="metric gold">50-60万</span>，报表自动化年节省 <span class="metric">8万元</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-title">重点项目</div>
+
+    <div class="proj-block">
+      <div class="proj-header">
+        <span class="proj-name">菜鸟通用办公AI工作台</span>
+        <span class="proj-role">AI产品经理</span>
+        <span class="proj-date">2025.07 — 至今</span>
+      </div>
+      <div class="proj-desc">响应企业AI数字化转型战略，解决协同低效、文档创作耗时、流程审批繁琐等痛点，深度整合智能采购寻源、实时舆情管理、文档智能生成、流程高效审批等核心功能。</div>
+      <ul class="bullet-list">
+        <li>成为公司AI转型核心标杆产品，<strong>累计覆盖用户超1万人</strong>，赋能全公司高效办公</li>
+        <li>构建智能体市场与工作流编排功能，为后续产品迭代与场景拓展提供可复用能力底座</li>
+      </ul>
+      <div class="award-line">🏆 阿里集团AI比赛奖项得主</div>
+    </div>
+
+    <div class="proj-block">
+      <div class="proj-header">
+        <span class="proj-name">企业决策与风险管理AI升级项目</span>
+        <span class="proj-role">流程专家 &amp; 项目经理</span>
+        <span class="proj-date">2025.02 — 至今</span>
+      </div>
+      <div class="proj-desc">牵头搭建企业级流程风控与决策智能Agent平台，锚定6000条在跑流程中的100条高价值核心流程，构建"风险查找→智能提报→前置预审批→正式审批→效能诊断"全链路智能风控体系。</div>
+      <ul class="bullet-list">
+        <li>身兼项目经理、产品经理、流程专家三重角色，主导项目全生命周期管理</li>
+        <li>联合业务团队完成全节点风险点梳理与审批规则刚性固化，实现审批决策质量与流程效率双重跃升</li>
+      </ul>
+    </div>
+  </main>
+
+</div>
+
+<script>
+function exportPDF() {
+  var btn = document.querySelector('.fab-wrap');
+  btn.style.display = 'none';
+  var style = document.createElement('style');
+  style.id = 'print-override';
+  style.innerHTML = '@page { size: A4; margin: 0; } @media print { html, body { width: 210mm; margin: 0 !important; padding: 0 !important; } * { print-color-adjust: exact !important; -webkit-print-color-adjust: exact !important; } .resume { width: 794px !important; flex-direction: row !important; box-shadow: none !important; } .sidebar { width: 248px !important; background: #4a6274 !important; print-color-adjust: exact !important; -webkit-print-color-adjust: exact !important; } }';
+  document.head.appendChild(style);
+  window.print();
+  setTimeout(function() {
+    var s = document.getElementById('print-override');
+    if (s) s.remove();
+    btn.style.display = '';
+  }, 1000);
+}
+</script>
+</body>
+</html>
